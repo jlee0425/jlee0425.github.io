@@ -11,8 +11,9 @@ const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     text-shadow: 1px 1px 2px lightgrey;
-    font-family: 'Roboto';
+    font-family: 'Sora';
     a {
       transition: all 0.3s ease;
     }
@@ -31,18 +32,15 @@ const Layout = ({ children, location }) => {
       mode='immediate'
       leave={{
         opacity: 0,
-        transform: 'translate3d(0, 0vh, 0) scale3d(0.5, 0.5, 1)',
-        config: { clamp: true }
+        transform: 'translate3d(0, 0%, 0) scale3d(0.5, 0.5, 1)'
       }}
       enter={{
         opacity: 0,
-        transform: 'translate3d(0, 20vh, 0) scale3d(1, 1, 1)',
-        config: { clamp: true }
+        transform: 'translate3d(0, 20%, 0) scale3d(1, 1, 1)'
       }}
       usual={{
         opacity: 1,
-        transform: 'translate3d(0, 0vh, 0) scale3d(1, 1, 1)',
-        config: { clamp: true }
+        transform: 'translate3d(0, 0%, 0) scale3d(1, 1, 1)'
       }}
     >
       <Global />
