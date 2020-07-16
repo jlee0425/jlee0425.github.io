@@ -98,11 +98,11 @@ const Resume = ({ location }) => {
         <Head style={{ gridArea: 'Head' }}>
           <h1>Jake Lee</h1>
           <span>
-            <a href='github.com/jlee0425'>
+            <a href='https://github.com/jlee0425'>
               <FontAwesomeIcon icon={faGithub} />
             </a>{' '}
             |{' '}
-            <a href='linkedin.com/in/jakejlee'>
+            <a href='https://linkedin.com/in/jakejlee'>
               <FontAwesomeIcon icon={faLinkedin} />
             </a>{' '}
             |{' '}

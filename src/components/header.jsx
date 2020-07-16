@@ -34,9 +34,18 @@ const Header = () => (
     <Logo>
       <TransitionLink
         to='/'
-        leave={{ opacity: 0, transform: 'translate3d(0, -20%, 0)' }}
-        enter={{ opacity: 0, transform: 'translate3d(0, 20%, 0)' }}
-        usual={{ opacity: 1, transform: 'translate3d(0%, 0, 0)' }}
+        leave={{
+          opacity: 0,
+          transform: 'translate3d(0, -20%, 0) scale3d(0.5, 0.5, 1)'
+        }}
+        enter={{
+          opacity: 0,
+          transform: 'translate3d(0, 20%, 0) scale3d(1, 1, 1)'
+        }}
+        usual={{
+          opacity: 1,
+          transform: 'translate3d(0%, 0, 0) scale3d(1, 1, 1)'
+        }}
       >
         <img
           src={require('../images/icon.png')}
@@ -50,9 +59,18 @@ const Header = () => (
         <StyledList>
           <TransitionLink
             to='/projects'
-            leave={{ opacity: 0, transform: 'translate3d(100%, 0, 0)' }}
-            enter={{ opacity: 0, transform: 'translate3d(-100%, 0, 0)' }}
-            usual={{ opacity: 1, transform: 'translate3d(0%, 0, 0)' }}
+            leave={{
+              opacity: 0,
+              transform: 'translate3d(100%, 0, 0) scale3d(0.5, 0.5, 1)'
+            }}
+            enter={{
+              opacity: 0,
+              transform: 'translate3d(-100%, 0, 0) scale3d(1, 1, 1)'
+            }}
+            usual={{
+              opacity: 1,
+              transform: 'translate3d(0%, 0, 0) scale3d(1, 1, 1)'
+            }}
           >
             PROJECTS
           </TransitionLink>
@@ -60,9 +78,18 @@ const Header = () => (
         <StyledList>
           <TransitionLink
             to='/resume'
-            leave={{ opacity: 0, transform: 'translate3d(-100%, 0, 0)' }}
-            enter={{ opacity: 0, transform: 'translate3d(100%, 0, 0)' }}
-            usual={{ opacity: 1, transform: 'translate3d(0%, 0, 0)' }}
+            leave={{
+              opacity: 0,
+              transform: 'translate3d(-100%, 0, 0) scale3d(0.5, 0.5, 1)'
+            }}
+            enter={{
+              opacity: 0,
+              transform: 'translate3d(100%, 0, 0) scale3d(1, 1, 1)'
+            }}
+            usual={{
+              opacity: 1,
+              transform: 'translate3d(0%, 0, 0) scale3d(1, 1, 1)'
+            }}
           >
             RESUME
           </TransitionLink>
