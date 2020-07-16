@@ -4,10 +4,11 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 import IconLink from '../components/iconLink'
+import SEO from '../components/seo'
 
 const ResumeContainer = styled.div`
   display: grid;
-  margin: 10vh 15%;
+  margin: 10vh 15vw;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.3fr 0.3fr 1.2fr 0.4fr 0.3fr 1fr;
   gap: 5px 5px;
@@ -90,9 +91,9 @@ const Links = styled.div`
   width: 20%;
 `
 const Resume = ({ location }) => {
-  console.log('location', location)
   return (
     <>
+      <SEO title='Resume' />
       <ResumeContainer>
         <Head style={{ gridArea: 'Head' }}>
           <h1>Jake Lee</h1>
@@ -274,7 +275,9 @@ const Resume = ({ location }) => {
         </GridItem>
         <GridItem style={{ gridArea: 'Education' }}>
           <Title>Education</Title>
-          <Title small>Langara College - Associate of Science</Title>
+          <Title small>
+            Langara College - Associate of Science: Science General
+          </Title>
           <SubHead>May 2017 - Dec 2019 (Dean's Honour Roll)</SubHead>
         </GridItem>
         <GridItem style={{ gridArea: 'Experience' }}>
