@@ -13,7 +13,7 @@ const Global = createGlobalStyle`
     height: 100%;
     width: 100%;
     text-shadow: 1px 1px 2px lightgrey;
-    font-family: 'Sora';
+    font-family: 'Roboto';
     a {
       transition: all 0.3s ease;
     }
