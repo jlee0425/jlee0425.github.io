@@ -4,7 +4,7 @@ This branch is the source code of my portfolio website, and the website is curre
 
 ## Note
 
-This website is built with `react`, `gatsby`, `react-spring`, and published using `gh-pages`.
+This website is built with `react`, `gatsby`, `Graphql`,`react-spring`, and published using `gh-pages`.
 
 - Please see `package.json` for more detailed dependancies.
 
