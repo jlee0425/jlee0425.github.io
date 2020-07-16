@@ -9,7 +9,6 @@ module.exports = {
     'gatsby-plugin-layout',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -34,8 +33,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Roboto`,
-            variants: [`400`, `500`, `700`]
+            family: `Sora`,
+            variants: [`400`, `700`]
           }
         ]
       }
