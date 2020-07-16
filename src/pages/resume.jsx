@@ -87,9 +87,10 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 15%;
+  width: 20%;
 `
 const Resume = ({ location }) => {
+  console.log('location', location)
   return (
     <>
       <ResumeContainer>
