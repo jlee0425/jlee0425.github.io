@@ -10,8 +10,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 340px;
   height: 80%;
+  max-width: 340px;
   max-height: 480px;
 `
 const Background = styled(Img)`
@@ -57,6 +57,7 @@ const Button = styled.button`
 const Links = styled.div`
   display: flex;
   align-items: center;
+  text-align: center;
   height: 1.5rem;
   font-size: 1.5rem;
 
@@ -65,9 +66,7 @@ const Links = styled.div`
     height: 1.5rem;
     font-size: 1.2rem;
     color: white;
-    & > .border {
-      border: 1px solid;
-    }
+    border: ${props => props.giveborder === 'true' && '1px solid'};
   }
 `
 const ProjectCard = ({ data: { title, url, git, image, library } }) => {
@@ -82,14 +81,7 @@ const ProjectCard = ({ data: { title, url, git, image, library } }) => {
         <Links>
           <IconLink git url={git} style={{ marginRight: '5px' }} />
           {url ? (
-            <a
-              href={url}
-              style={{
-                border: '1px solid',
-                borderRadius: '5px',
-                padding: '0px 3px'
-              }}
-            >
+            <a href={url} giveborder='true'>
               LIVE
             </a>
           ) : null}
