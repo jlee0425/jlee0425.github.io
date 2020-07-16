@@ -32,7 +32,7 @@ const Main = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100%;
+  height: 85%;
 `
 const Name = styled.h1`
   margin-top: 0;
