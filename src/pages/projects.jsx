@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import ProjectCard from '../components/projectCard'
 import projectList from '../data/projects.json'
+import SEO from '../components/seo'
 
 const Container = styled.div`
   display: grid;
@@ -14,8 +15,6 @@ const Container = styled.div`
   overflow: auto;
 `
 const Projects = ({ location }) => {
-  console.log('location', location)
-
   const {
     projectImages: { edges }
   } = useStaticQuery(graphql`
@@ -38,6 +37,7 @@ const Projects = ({ location }) => {
   `)
   return (
     <>
+      <SEO title='Projects' />
       <Container>
         {edges &&
           projectList.map(project => {
