@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import IconLink from '../components/iconLink'
+import SEO from '../components/seo'
 
 const Background = styled(Img)`
   position: absolute;
@@ -37,12 +38,18 @@ const Name = styled.h1`
   margin-top: 0;
   font-size: 3rem;
 `
+const Avatar = styled(Img)`
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px lightgrey;
+`
 const Sub = styled.div`
   display: flex;
   justify-content: space-between;
   width: 40vw;
   max-width: 350px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   @media (max-width: 800px) {
     flex-direction: column;
     height: 20vh;
@@ -57,21 +64,32 @@ const Icons = styled.div`
   min-width: 100px;
 `
 const IndexPage = ({ location }) => {
-  console.log('location', location)
-
-  const coverImage = useStaticQuery(graphql`
+  const {
+    allFile: { edges }
+  } = useStaticQuery(graphql`
     query {
-      imageSharp(fluid: { originalName: { eq: "_MG_0007.jpg" } }) {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
+      allFile(filter: { relativeDirectory: { in: "main" } }) {
+        edges {
+          node {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+            name
+          }
         }
       }
     }
   `)
+  const coverImg = edges.find(edge => edge.node.name === 'coverImg')
+  const avatarImg = edges.find(edge => edge.node.name === 'avatar')
   return (
     <>
-      <Background fluid={coverImage.imageSharp.fluid} />
+      <SEO title='Home' />
+      <Background fluid={coverImg.node.childImageSharp.fluid} />
       <Main>
+        <Avatar fluid={avatarImg.node.childImageSharp.fluid} />
         <h1 style={{ marginBottom: '0' }}>Hello, World!</h1>
         <Name>I'm Jake.</Name>
         <Sub>
