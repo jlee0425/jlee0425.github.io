@@ -8,11 +8,14 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-gap: 1rem;
-  height: 80vh;
-  padding: 8vh 0;
   align-items: center;
+  padding-top: 8vh;
+  height: 89vh;
+  overflow: auto;
 `
 const Projects = ({ location }) => {
+  console.log('location', location)
+
   const {
     projectImages: { edges }
   } = useStaticQuery(graphql`
@@ -45,7 +48,7 @@ const Projects = ({ location }) => {
               title: project.name,
               url: project.url || null,
               git: project.git,
-              image: image.node.childImageSharp,
+              image: image.node.childImageSharp.fluid,
               library: project.library
             }
             return <ProjectCard data={data} key={project.name} />
