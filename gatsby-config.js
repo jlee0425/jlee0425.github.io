@@ -1,15 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `Jake Lee`,
+    title_short: `jlee`,
     description: `Jake Lee's Portfolio`,
     author: `@jlee0425`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     'gatsby-plugin-layout',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,7 +34,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Sora`,
+            family: `Roboto`,
             variants: [`400`, `700`]
           }
         ]
