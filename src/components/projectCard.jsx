@@ -52,7 +52,7 @@ const ProjectCard = ({ data: { title, url, git, image } }) => {
   const [color, setColor] = useSpring(() => ({
     opacity: 0,
     color: 'black',
-    config: { duration: 700 }
+    config: { duration: 500 }
   }))
   const [background, setBackground] = useSpring(() => ({
     background:
