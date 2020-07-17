@@ -12,10 +12,11 @@ const Global = createGlobalStyle`
     padding: 0;
     height: 100%;
     width: 100%;
-    text-shadow: 1px 1px 2px lightgrey;
     font-family: 'Roboto';
+    color: #0c132c;
     a {
-      transition: all 0.3s ease;
+      color: #040826;
+      transition: all 300ms linear;
     }
     a:hover {
       transform: scale(1.2);
@@ -32,7 +33,10 @@ const Layout = ({ children, location }) => {
       mode='immediate'
       leave={{
         opacity: 0,
-        transform: 'translate3d(0, 0%, 0) scale3d(0.5, 0.5, 1)'
+        transform: 'translate3d(0, 0%, 0) scale3d(0.5, 0.5, 1)',
+        config: {
+          duration: 500
+        }
       }}
       enter={{
         opacity: 0,

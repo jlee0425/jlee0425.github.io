@@ -16,15 +16,16 @@ const Navbar = styled.header`
   top: 0;
   left: 0;
 `
-const StyledUL = styled.ul`
-  // margin-right: 0px;
-`
 const StyledList = styled.li`
   display: inline;
   flex-direction: row;
   list-style: none;
   padding-right: 30px;
   font-weight: bold;
+  a:hover {
+    color: #696a73;
+    text-shadow: 1px 1px 2px #cccccd;
+  }
 `
 const Logo = styled.div`
   margin-left: 15px;
@@ -36,7 +37,10 @@ const Header = () => (
         to='/'
         leave={{
           opacity: 0,
-          transform: 'translate3d(0, -20%, 0) scale3d(0.5, 0.5, 1)'
+          transform: 'translate3d(0, -20%, 0) scale3d(0.5, 0.5, 1)',
+          config: {
+            duration: 500
+          }
         }}
         enter={{
           opacity: 0,
@@ -55,13 +59,16 @@ const Header = () => (
       </TransitionLink>
     </Logo>
     <div>
-      <StyledUL>
+      <ul>
         <StyledList>
           <TransitionLink
             to='/projects'
             leave={{
               opacity: 0,
-              transform: 'translate3d(100%, 0, 0) scale3d(0.5, 0.5, 1)'
+              transform: 'translate3d(100%, 0, 0) scale3d(0.5, 0.5, 1)',
+              config: {
+                duration: 500
+              }
             }}
             enter={{
               opacity: 0,
@@ -80,7 +87,10 @@ const Header = () => (
             to='/resume'
             leave={{
               opacity: 0,
-              transform: 'translate3d(-100%, 0, 0) scale3d(0.5, 0.5, 1)'
+              transform: 'translate3d(-100%, 0, 0) scale3d(0.5, 0.5, 1)',
+              config: {
+                duration: 500
+              }
             }}
             enter={{
               opacity: 0,
@@ -94,7 +104,7 @@ const Header = () => (
             RESUME
           </TransitionLink>
         </StyledList>
-      </StyledUL>
+      </ul>
     </div>
   </Navbar>
 )
