@@ -37,6 +37,9 @@ const Main = styled.div`
 const Name = styled.h1`
   margin-top: 0;
   font-size: 3rem;
+  background: linear-gradient(135deg, #00aa9b, #040826);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `
 const Avatar = styled(Img)`
   width: 130px;
@@ -50,6 +53,7 @@ const Sub = styled.div`
   width: 40vw;
   max-width: 350px;
   font-size: 1.4rem;
+  font-weight: bold;
   @media (max-width: 800px) {
     flex-direction: column;
     height: 20vh;
@@ -98,7 +102,10 @@ const IndexPage = ({ location }) => {
             mode='immediate'
             leave={{
               opacity: 0,
-              transform: 'translate3d(100%, 0, 0) scale3d(0.5, 0.5, 1)'
+              transform: 'translate3d(100%, 0, 0) scale3d(0.5, 0.5, 1)',
+              config: {
+                duration: 500
+              }
             }}
             enter={{
               opacity: 0,
@@ -126,7 +133,10 @@ const IndexPage = ({ location }) => {
             mode='immediate'
             leave={{
               opacity: 0,
-              transform: 'translate3d(-100%, 0, 0) scale3d(0.5, 0.5, 1)'
+              transform: 'translate3d(-100%, 0, 0) scale3d(0.5, 0.5, 1)',
+              config: {
+                duration: 500
+              }
             }}
             enter={{
               opacity: 0,
