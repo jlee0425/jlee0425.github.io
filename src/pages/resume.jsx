@@ -10,7 +10,7 @@ const ResumeContainer = styled.div`
   display: grid;
   margin: 10vh 15vw;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.3fr 0.3fr 1.2fr 0.4fr 0.3fr 1fr;
+  grid-template-rows: 0.3fr 0.3fr 1.2fr 0.4fr 0.3fr 0.8fr;
   gap: 5px 5px;
   grid-template-areas:
     'Head Head'
@@ -20,23 +20,19 @@ const ResumeContainer = styled.div`
     'Education Education'
     'Experience Experience';
 
-  // @media (min-width: 1000px) {
-  //   grid-template-columns: 1fr;
-  //   grid-template-area:
-  //     'Head'
-  //     'About'
-  //     'Projects'
-  //     'Skills'
-  //     'Extra-Curricular'
-  //     'Education'
-  //     'Experience';
-  // }
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const Head = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #00a0df, #040826);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   h1 {
     margin: 0;
     font-size: 3rem;
@@ -68,6 +64,7 @@ const SubHead = styled.div`
 `
 const Body = styled.section`
   font-size: 0.9rem;
+  color: #2f3030;
   ul {
     padding-left: 20px;
   }
@@ -81,7 +78,7 @@ const CustomLink = styled.a`
   border-radius: 5px;
   font-size: 0.9rem;
   text-align: center;
-  background: black;
+  background: rgb(30, 43, 49);
   color: white;
 `
 const Links = styled.div`
