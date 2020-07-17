@@ -12,5 +12,5 @@ This website is built with `react`, `gatsby`, `Graphql`,`react-spring`, and publ
 
 - [x] Page transition bug
   - Transition breaks the website when **going back** from _projects_ to _resume_ or the other way around.
-- [ ] Resume page grid responsive issue
+- [x] Resume page grid responsive issue
   - Grid system needs to be reworked.
