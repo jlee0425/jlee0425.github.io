@@ -11,6 +11,7 @@ const Footer = styled.footer`
   height: 3vh;
   bottom: 0;
   position: fixed;
+  font-weight: 550;
   background: grey;
   * {
     margin-right: 10px;
