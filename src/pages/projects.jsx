@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
+
 import ProjectCard from '../components/projectCard'
 import projectList from '../data/projects.json'
 import SEO from '../components/seo'
@@ -35,24 +36,25 @@ const Projects = ({ location }) => {
       }
     }
   `)
+  const projects = projectList.map(project => {
+    const image = edges.find(
+      image => image.node.relativePath === `projects/${project.img}`
+    )
+    const data = {
+      title: project.name,
+      url: project.url || null,
+      git: project.git,
+      image: image.node.childImageSharp.fluid
+    }
+    return { ...data }
+  })
   return (
     <>
       <SEO title='Projects' />
       <Container>
-        {edges &&
-          projectList.map(project => {
-            const image = edges.find(
-              image => image.node.relativePath === `projects/${project.img}`
-            )
-            const data = {
-              title: project.name,
-              url: project.url || null,
-              git: project.git,
-              image: image.node.childImageSharp.fluid,
-              library: project.library
-            }
-            return <ProjectCard data={data} key={project.name} />
-          })}
+        {projects.map(project => (
+          <ProjectCard data={project} key={project.title} />
+        ))}
       </Container>
     </>
   )
