@@ -1,22 +1,28 @@
 [
   {
-    "name": "Sorting Visualizer",
+    "title": "Sorting Visualizer",
     "img": "sorting-visualizer.png",
-    "library": "react",
+    "thumbnail": "sorting-visualizer.png",
+    "desc": "Side Project",
+    "to": "/projects/sorting-visualizer",
     "url": "https://quirky-swirles-9080c2.netlify.app",
     "git": "https://github.com/jlee0425/Sorting-Visualizer"
   },
   {
-    "name": "COVID-19 Tracker",
+    "title": "COVID-19 Tracker",
     "img": "covid19-tracker.png",
-    "library": "react",
+    "thumbnail": "covid19-tracker.png",
+    "desc": "Side Project",
+    "to": "/projects/c19-tracker",
     "url": "https://blissful-saha-fa57eb.netlify.app",
     "git": "https://github.com/jlee0425/covid-19-tracker"
   },
   {
-    "name": "Movie Browser",
+    "title": "Movie Browser",
     "img": "movie-browser.png",
-    "library": "react-native",
+    "thumbnail": "movie-browser.png",
+    "desc": "Side Project",
+    "to": "/projects/movie-browser",
     "git": "https://github.com/jlee0425/Movie_Browser"
   }
 ]
