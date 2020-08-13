@@ -8,7 +8,6 @@ import SEO from '../components/seo'
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 7vh;
   flex-wrap: wrap;
