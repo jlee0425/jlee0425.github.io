@@ -10,7 +10,7 @@ const Navbar = styled.header`
   max-height: 75px;
   width: 100%;
   justify-content: space-between;
-  background: white;
+  background: whiteSmoke;
   color: black;
   position: fixed;
   z-index: 1;
@@ -54,7 +54,7 @@ const Header = () => (
       >
         <img
           src={require('../images/icon.png')}
-          style={{ width: '3vw', minWidth: '30px' }}
+          style={{ width: '42px', minWidth: '30px' }}
           alt='logo'
         />
       </TransitionLink>
