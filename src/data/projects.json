@@ -1,28 +1,33 @@
 [
   {
     "title": "Sorting Visualizer",
-    "img": "sorting-visualizer.png",
     "thumbnail": "sorting-visualizer.png",
-    "desc": "Side Project",
+    "desc": "React | React-spring | Semantic-ui",
     "to": "/projects/sorting-visualizer",
     "url": "https://quirky-swirles-9080c2.netlify.app",
     "git": "https://github.com/jlee0425/Sorting-Visualizer"
   },
   {
     "title": "COVID-19 Tracker",
-    "img": "covid19-tracker.png",
     "thumbnail": "covid19-tracker.png",
-    "desc": "Side Project",
-    "to": "/projects/c19-tracker",
+    "desc": "React | recharts.js | Material-ui",
+    "to": "/projects/covid19-tracker",
     "url": "https://blissful-saha-fa57eb.netlify.app",
     "git": "https://github.com/jlee0425/covid-19-tracker"
   },
   {
     "title": "Movie Browser",
-    "img": "movie-browser.png",
     "thumbnail": "movie-browser.png",
-    "desc": "Side Project",
+    "desc": "React Native | Expo | Redux | Redux-thunk",
     "to": "/projects/movie-browser",
     "git": "https://github.com/jlee0425/Movie_Browser"
+  },
+  {
+    "title": "jlee0425.github.io",
+    "thumbnail": "portfolio.png",
+    "desc": "React | Gatsby.js | React-spring | Prismic | Styled-components",
+    "to": "projects/portfolio",
+    "url": "https://jlee0425.github.io",
+    "git": "https://github.com/jlee0425/jlee0425.github.io/tree/source"
   }
 ]

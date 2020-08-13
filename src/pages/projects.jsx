@@ -7,13 +7,13 @@ import projectList from '../data/projects.json'
 import SEO from '../components/seo'
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  grid-gap: 1rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding-top: 8vh;
-  height: 89vh;
-  overflow: auto;
+  margin-top: 7vh;
+  flex-wrap: wrap;
+  height: 100%;
+  padding-bottom: 3vh;
 `
 const Projects = ({ location }) => {
   const {
@@ -21,13 +21,13 @@ const Projects = ({ location }) => {
   } = useStaticQuery(graphql`
     query {
       projectImages: allFile(
-        filter: { relativePath: { regex: "/projects/" } }
+        filter: { relativePath: { regex: "/thumbnails/" } }
       ) {
         edges {
           node {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 340) {
+              fluid(maxWidth: 480) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -38,12 +38,11 @@ const Projects = ({ location }) => {
   `)
   const projects = projectList.map(project => {
     const image = edges.find(
-      image => image.node.relativePath === `projects/${project.img}`
+      image => image.node.relativePath === `thumbnails/${project.thumbnail}`
     )
     const data = {
-      title: project.name,
+      ...project,
       url: project.url || null,
-      git: project.git,
       image: image.node.childImageSharp.fluid
     }
     return { ...data }

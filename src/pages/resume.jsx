@@ -8,15 +8,14 @@ import SEO from '../components/seo'
 
 const ResumeContainer = styled.div`
   display: grid;
-  margin: 10vh 15vw;
+  margin: 7vh 10vw;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.3fr 0.3fr 1.2fr 0.4fr 0.3fr 0.8fr;
   gap: 5px 5px;
   grid-template-areas:
     'Head Head'
     'About About'
-    'Projects Extra-Curricular'
     'Projects Skills'
+    'Projects Extra-Curricular'
     'Education Education'
     'Experience Experience';
 
@@ -86,6 +85,12 @@ const Links = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 20%;
+`
+const H3 = styled.h3`
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 1rem;
 `
 const Resume = ({ location }) => {
   return (
@@ -165,7 +170,10 @@ const Resume = ({ location }) => {
           </Body>
           <Title small>
             Movie Browser
-            <IconLink git url='https://github.com/jlee0425/Movie_Browser' />
+            <Links>
+              <CustomLink href='https://youtu.be/wGMgR8q_aRs'>DEMO</CustomLink>
+              <IconLink git url='https://github.com/jlee0425/Movie_Browser' />
+            </Links>
           </Title>
           <SubHead>
             A mobile app that keeps track of latest box-office movies and the
@@ -221,6 +229,19 @@ const Resume = ({ location }) => {
         </GridItem>
         <GridItem style={{ gridArea: 'Extra-Curricular' }}>
           <Title>Extra-curricular</Title>
+          <Title small>CS50: Mobile App Development with React Native</Title>
+          <SubHead>
+            HarvardX{' '}
+            <CustomLink href='https://courses.edx.org/certificates/3e32c0e899c34f95a884c8e1f7c66d62'>
+              Certificate
+            </CustomLink>
+          </SubHead>
+          <Body>
+            <p>
+              Learned and built a few apps using{' '}
+              <strong>React, React Native, Expo, and Redux</strong>.
+            </p>
+          </Body>
           <Title small>CS50: Introduction to Computer Science</Title>
           <SubHead>
             HarvardX
@@ -247,28 +268,15 @@ const Resume = ({ location }) => {
               features such as smart-pointer.
             </p>
           </Body>
-          <Title small>CS50: Mobile App Development with React Native</Title>
-          <SubHead>
-            HarvardX <CustomLink href=''>Certificate</CustomLink>
-          </SubHead>
-          <Body>
-            <p>
-              Learned and built a few apps using{' '}
-              <strong>React, React Native, Expo, and Redux</strong>.
-            </p>
-          </Body>
         </GridItem>
         <GridItem style={{ gridArea: 'Skills' }}>
           <Title>Skills</Title>
-          <Body>
-            <span>
-              In my projects, I have experimented with web apps (
-              <strong>React, Async Redux, HTML, CSS, Javascript, Python</strong>
-              ), mobile apps(<strong>React Native</strong>), and{' '}
-              <strong>Oracle SQL</strong>. During curriculum, I studied{' '}
-              <strong>C++, Java, Bash and C</strong>
-            </span>
-          </Body>
+          <H3>Frontend</H3>
+          <Body> - React, Redux, HTML, CSS, JS, ReactNative</Body>
+          <H3>Compiled</H3>
+          <Body> - C++, C</Body>
+          <H3>Others</H3>
+          <Body>- Java, Python, Oracle SQL, SQLite, Bash, Git, Lightroom</Body>
         </GridItem>
         <GridItem style={{ gridArea: 'Education' }}>
           <Title>Education</Title>

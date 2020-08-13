@@ -1,7 +1,7 @@
 import React from 'react'
 import { TransitionProvider, TransitionViews } from 'gatsby-plugin-transitions'
 import PropTypes from 'prop-types'
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
@@ -14,17 +14,17 @@ const Global = createGlobalStyle`
     width: 100%;
     font-family: 'Roboto';
     color: #0c132c;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     a {
       color: #040826;
       transition: all 300ms linear;
     }
     a:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }        
   }
-`
-const StyledTransitionViews = styled(TransitionViews)`
-  position: relative;
 `
 const Layout = ({ children, location }) => {
   return (
@@ -48,8 +48,8 @@ const Layout = ({ children, location }) => {
       }}
     >
       <Global />
-      <StyledTransitionViews>{children}</StyledTransitionViews>
       <Header />
+      <TransitionViews>{children}</TransitionViews>
       <Footer />
     </TransitionProvider>
   )

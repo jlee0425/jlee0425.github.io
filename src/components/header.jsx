@@ -6,10 +6,11 @@ import './header.css'
 const Navbar = styled.header`
   display: flex;
   align-items: center;
-  height: 8vh;
+  height: 7vh;
   max-height: 75px;
   width: 100%;
   justify-content: space-between;
+  background: white;
   color: black;
   position: fixed;
   z-index: 1;
@@ -28,7 +29,7 @@ const StyledList = styled.li`
   }
 `
 const Logo = styled.div`
-  margin-left: 15px;
+  margin-left: 18px;
 `
 const Header = () => (
   <Navbar>

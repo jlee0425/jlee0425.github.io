@@ -1,95 +1,70 @@
 import React from 'react'
-import { useSpring, animated } from 'react-spring'
+import { TransitionLink } from 'gatsby-plugin-transitions'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import IconLink from './iconLink'
-const CardContainer = styled.div`
+
+const CardContainer = styled(TransitionLink)`
   display: flex;
-  position: relative;
-  justify-self: center;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 80%;
-  max-width: 340px;
-  max-height: 480px;
-  box-shadow: 1px 1px 3px grey;
-  border-radius: 5px;
-`
-const Background = styled(Img)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  & > img {
-    object-fit: fit !important;
-    object-position: 0% 0% !important;
+  padding: 1rem;
+  height: 30vh;
+  box-sizing: border-box;
+  @media (min-width: 375px) {
+    width: 100vw;
+  }
+  @media (min-width: 768px) {
+    width: 50vw;
+  }
+  @media (min-width: 1024px) {
+    width: 33vw;
   }
 `
-const DescriptionBox = styled(animated.div)`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px grey;
+  border-radius: 0.25rem;
+  flex: 1 1 auto;
 `
-const Title = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 0;
+const Thumbnail = styled(Img)`
+  height: 80%;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(90%);
+  &:hover & {
+    filter: contrast(100%);
+  }
 `
-const Links = styled.div`
-  display: flex;
-  width: 25%;
-  justify-content: space-around;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin: 10px;
+const DescriptionBox = styled.div`
+  padding: 1rem;
 `
-const ProjectCard = ({ data: { title, url, git, image } }) => {
-  const [color, setColor] = useSpring(() => ({
-    opacity: 0,
-    color: 'black',
-    config: { duration: 500 }
-  }))
-  const [background, setBackground] = useSpring(() => ({
-    background:
-      'linear-gradient(220deg, rgba(207, 207, 207, 0), rgba(170, 172, 174, 0.8))'
-  }))
+const Title = styled.p`
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #696969;
+`
+const Desc = styled.span`
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #cccccc;
+  margin-bottom: 1.25rem;
+`
+
+const ProjectCard = ({ data: { title, desc, image, to } }) => {
   return (
-    <CardContainer>
-      <Background fluid={image} />
-      <DescriptionBox
-        style={{ ...color, ...background }}
-        onMouseEnter={() => {
-          setColor({
-            opacity: 1,
-            color: 'white'
-          })
-          setBackground({
-            background:
-              'linear-gradient(220deg, rgba(207, 207, 207, 0.5), rgba(30, 43, 49, 1))'
-          })
-        }}
-        onMouseLeave={() => {
-          setColor({
-            opacity: 0,
-            color: 'black'
-          })
-          setBackground({
-            background:
-              'linear-gradient(220deg, rgba(207, 207, 207, 0), rgba(170, 172, 174, 0.8))'
-          })
-        }}
-      >
-        <Title>{title}</Title>
-        <Links>
-          <IconLink git url={git} />
-          {url ? <a href={url}>LIVE</a> : null}
-        </Links>
-      </DescriptionBox>
+    <CardContainer to={to}>
+      <Content>
+        <Thumbnail fluid={image} objectFit='cover' objectPosition='top right' />
+        <DescriptionBox>
+          <Title>{title}</Title>
+          <Desc>{desc}</Desc>
+        </DescriptionBox>
+      </Content>
     </CardContainer>
   )
 }
