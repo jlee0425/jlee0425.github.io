@@ -7,7 +7,7 @@ const CardContainer = styled(TransitionLink)`
   display: flex;
   justify-content: center;
   padding: 1rem;
-  height: 30vh;
+  height: 40vh;
   box-sizing: border-box;
   @media (min-width: 375px) {
     width: 100vw;
@@ -17,6 +17,9 @@ const CardContainer = styled(TransitionLink)`
   }
   @media (min-width: 1024px) {
     width: 33vw;
+  }
+  @media (min-width: 1440px) {
+    width: 25vw;
   }
 `
 const Content = styled.div`
