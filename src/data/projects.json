@@ -20,13 +20,14 @@
     "thumbnail": "movie-browser.png",
     "desc": "React Native | Expo | Redux | Redux-thunk",
     "to": "/projects/movie-browser",
+    "url": "https://youtu.be/wGMgR8q_aRs",
     "git": "https://github.com/jlee0425/Movie_Browser"
   },
   {
     "title": "jlee0425.github.io",
     "thumbnail": "portfolio.png",
     "desc": "React | Gatsby.js | React-spring | Prismic | Styled-components",
-    "to": "projects/portfolio",
+    "to": "/projects/portfolio",
     "url": "https://jlee0425.github.io",
     "git": "https://github.com/jlee0425/jlee0425.github.io/tree/source"
   }

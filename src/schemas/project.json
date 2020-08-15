@@ -1,0 +1,177 @@
+{
+  "header": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "uid"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "title"
+      }
+    },
+    "date": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "heading6",
+        "label": "date",
+        "placeholder": "Month Year"
+      }
+    },
+    "summary": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em",
+        "label": "summary"
+      }
+    },
+    "git": {
+      "type": "Link",
+      "config": {
+        "label": "git"
+      }
+    },
+    "link": {
+      "type": "Link",
+      "config": {
+        "label": "link"
+      }
+    },
+    "preview": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "preview"
+      }
+    }
+  },
+  "content": {
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {
+          "image_text": {
+            "type": "Slice",
+            "fieldset": "image_text",
+            "description": "Images and text",
+            "icon": "account_balance_wallet",
+            "display": "grid",
+            "non-repeat": {
+              "title1": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4",
+                  "label": "title"
+                }
+              }
+            },
+            "repeat": {
+              "img1": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "img1"
+                }
+              },
+              "img2": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "img2"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "content"
+                }
+              }
+            }
+          },
+          "list": {
+            "type": "Slice",
+            "fieldset": "list",
+            "description": "A list with a title",
+            "icon": "format_list_bulleted",
+            "display": "list",
+            "non-repeat": {
+              "title1": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "title"
+                }
+              },
+              "list": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "list-item, o-list-item",
+                  "label": "list"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_with_caption": {
+            "type": "Slice",
+            "fieldset": "image_with_caption",
+            "description": "image with caption",
+            "icon": "image",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "caption": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "caption"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "text_with_title": {
+            "type": "Slice",
+            "fieldset": "text_with_title",
+            "description": "Text with title",
+            "icon": "short_text",
+            "display": "list",
+            "non-repeat": {
+              "title1": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "title"
+                }
+              },
+              "body": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em",
+                  "label": "body"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}
