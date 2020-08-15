@@ -53,5 +53,7 @@
     "type": "git",
     "url": "https://github.com/jlee0425/jlee0425.github.io"
   },
-  "resolutions": { "gatsby-source-graphql-universal": "3.3.0" }
+  "resolutions": {
+    "gatsby-source-graphql-universal": "3.3.0"
+  }
 }
