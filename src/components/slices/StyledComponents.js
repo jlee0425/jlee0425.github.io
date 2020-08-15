@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
-export const SliceContainer = styled.section``
-export const ImageContainer = styled.div``
+export const SliceContainer = styled.section`
+  margin-top: 5rem;
+`
+export const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`
 export const Content = styled.div`
-  padding: 0 10rem;
+  padding: 0 8rem;
   @media (max-width: 1024px) {
     padding: 0 1rem;
   }

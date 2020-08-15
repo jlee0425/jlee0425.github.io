@@ -11,7 +11,6 @@ const SliceZone = ({ slices }) => {
     PRISMIC_ProjectBodyList: List,
     PRISMIC_ProjectBodyImage_text: ImageText
   }
-  console.log('slices', slices)
   return (
     slices &&
     slices.map((slice, index) => {

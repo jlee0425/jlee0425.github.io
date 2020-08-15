@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Project = ({ data: { prismic } }) => {
   const { project: data } = prismic
-  console.log('data', data)
+
   return (
     <Container>
       <Head
