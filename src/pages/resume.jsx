@@ -122,10 +122,10 @@ const Resume = ({ location }) => {
           <Body>
             <p>
               <strong>An enthusiastic react developer.</strong> I am excited
-              about tackling tough problems, performance boosts, and
-              user-experiences of an app. I always look for an opportunity to
-              learn new things. In my free time, I build and maintain side
-              projects to learn new skills and technologies.
+              about tackling difficult problems, boosting performance, and
+              improving user-experiences of an app. I always look for an
+              opportunity to learn new things. In my free time, I build and
+              maintain side projects to learn new skills and technologies.
             </p>
             <p>
               <strong>A photograph hobbyist.</strong> I have been fascinated
@@ -158,7 +158,7 @@ const Resume = ({ location }) => {
           <Body>
             <ul>
               <li>
-                Implemented and tested five common sorting algorithms: Bubble,
+                Implemented and tested five standard sorting algorithms: Bubble,
                 Insertion, Heap, Merge, and Quick
               </li>
               <li>Built size and speed sliders for better user experience.</li>
@@ -264,7 +264,7 @@ const Resume = ({ location }) => {
           </SubHead>
           <Body>
             <p>
-              Learned exceptions, templates, iterators, patterns and new
+              Learned exceptions, templates, iterators, patterns, and new
               features such as smart-pointer.
             </p>
           </Body>
