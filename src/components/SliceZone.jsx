@@ -1,21 +1,27 @@
 import React from 'react'
-import { PrismicImage, TextWithTitle, List, ImageText } from './slices'
+import styled from 'styled-components'
+import { ImageWithCaption, TextWithTitle, List, ImageText } from './slices'
+
+const SliceContainer = styled.div``
 
 const SliceZone = ({ slices }) => {
   const sliceComponents = {
-    image_with_caption: PrismicImage,
-    text_with_title: TextWithTitle,
-    list: List,
-    image_text: ImageText
+    PRISMIC_ProjectBodyImage_with_Caption: ImageWithCaption,
+    PRISMIC_ProjectBodyText_with_title: TextWithTitle,
+    PRISMIC_ProjectBodyList: List,
+    PRISMIC_ProjectBodyImage_text: ImageText
   }
-
-  return slices.map((slice, index) => {
-    const SliceComponent = sliceComponents[slice.type]
-    if (SliceComponent) {
-      return <SliceComponent slice={slice} key={`slice-${index}`} />
-    }
-    return null
-  })
+  console.log('slices', slices)
+  return (
+    slices &&
+    slices.map((slice, index) => {
+      const SliceComponent = sliceComponents[slice.__typename]
+      if (SliceComponent) {
+        return <SliceComponent slice={slice} key={`slice-${index}`} />
+      }
+      return null
+    })
+  )
 }
 
 export default SliceZone

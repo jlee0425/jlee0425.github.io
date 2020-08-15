@@ -1,5 +1,6 @@
 import Head from './Head'
 import ImageText from './ImageText'
-import PrismicImage from './PrismicImage'
+import List from './List'
+import ImageWithCaption from './ImageWithCaption'
 import TextWithTitle from './TextWithTitle'
-export { Head, ImageText, PrismicImage, TextWithTitle }
+export { Head, ImageText, List, ImageWithCaption, TextWithTitle }
