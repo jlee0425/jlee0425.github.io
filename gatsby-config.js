@@ -44,15 +44,19 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-prismic',
+      resolve: 'gatsby-source-prismic-graphql',
       options: {
         repositoryName: 'jlee0425',
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/projects/${post.uid}`,
-        schemas: {
-          project_detail: require('./src/schemas/project.json')
-        },
-        shouldDownloadImage: ({ node, key, value }) => true
+        previews: true,
+        pages: [
+          {
+            type: 'Project',
+            match: '/projects/:uid',
+            component: require.resolve('./src/templates/Project.jsx')
+          }
+        ],
+        sharpKeys: [/image|photo|picture/]
       }
     }
   ]
