@@ -37,7 +37,7 @@ const Main = styled.div`
 const Name = styled.h1`
   margin-top: 0;
   font-size: 3rem;
-  background: linear-gradient(135deg, #00aa9b, #040826);
+  background: linear-gradient(270deg, #29323c, #485563);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `

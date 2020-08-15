@@ -29,7 +29,7 @@ const Head = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #00a0df, #040826);
+  background: linear-gradient(270deg, #29323c, #485563);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   h1 {

@@ -13,12 +13,12 @@ const Global = createGlobalStyle`
     height: 100%;
     width: 100%;
     font-family: 'Roboto';
-    color: #0c132c;
+    color: #29323c;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     a {
-      color: #040826;
+      color: #303030;
       transition: all 300ms linear;
     }
     a:hover {
