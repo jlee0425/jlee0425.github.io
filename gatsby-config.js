@@ -38,7 +38,7 @@ module.exports = {
         fonts: [
           {
             family: `Roboto`,
-            variants: [`400`, `700`]
+            variants: [`300`, `400`, `700`]
           }
         ]
       }
@@ -50,7 +50,7 @@ module.exports = {
         accessToken: `${process.env.API_KEY}`,
         linkResolver: ({ node, key, value }) => post => `/projects/${post.uid}`,
         schemas: {
-          project_detail: require('./src/schemas/project_detail.json')
+          project_detail: require('./src/schemas/project.json')
         },
         shouldDownloadImage: ({ node, key, value }) => true
       }
