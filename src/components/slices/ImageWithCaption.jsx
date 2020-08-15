@@ -1,9 +1,24 @@
 import React from 'react'
 
-import { SliceContainer, Content, Title } from './StyledComponents'
+import {
+  SliceContainer,
+  ImgSection,
+  StyledImg,
+  ImgContainer,
+  AltText
+} from './StyledComponents'
 
 const ImageWithCaption = ({ slice }) => {
-  return <div></div>
+  return (
+    <SliceContainer>
+      <ImgSection>
+        <ImgContainer>
+          <StyledImg src={slice.url} />
+          <AltText>{slice.alt}</AltText>
+        </ImgContainer>
+      </ImgSection>
+    </SliceContainer>
+  )
 }
 
 export default ImageWithCaption

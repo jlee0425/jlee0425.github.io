@@ -8,10 +8,10 @@ import SliceZone from '../components/SliceZone'
 const Container = styled.div`
   height: 100%;
   margin: 5vh 0;
-  padding: 0 10rem;
+  padding: 1rem 10rem;
 
   @media (max-width: 1024px) {
-    padding: 0 2rem;
+    padding: 1rem 2rem;
   }
 `
 
@@ -26,6 +26,7 @@ const Project = ({ data: { prismic } }) => {
         summary={data.summary[0]?.text}
         git={data.git?.url}
         link={data.link?.url}
+        preview={data.preview}
       />
       <SliceZone slices={data?.body} />
     </Container>

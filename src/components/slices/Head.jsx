@@ -6,15 +6,33 @@ import IconLink from '../iconLink'
 const HeadContainer = styled.div`
   display: flex;
   flex-direction: row;
-  @media (max-width: 1024px) {
+  justify-content: space-between;
+  @media (max-width: 1025px) {
     flex-direction: column;
   }
 `
 const SummaryBox = styled.div`
   width: 50%;
-  @media (max-width: 1024px) {
+  margin-right: 3rem;
+  @media (max-width: 1025px) {
     width: 100%;
+    margin-right: 0;
   }
+`
+const ImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1 1rem;
+  height: 80%;
+  @media (max-width: 1025px) {
+    height: 100%;
+  }
+`
+const StyledImg = styled.img`
+  margin: 2rem 0;
+  max-height: 360px;
+  width: auto;
 `
 const HeaderTitle = styled.h1`
   font-size: 2.5rem;
@@ -40,7 +58,7 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 20%;
+  width: 5rem;
 `
 
 const Head = ({ title, date, summary, git, link, preview }) => {
@@ -50,15 +68,21 @@ const Head = ({ title, date, summary, git, link, preview }) => {
         <HeaderTitle>{title}</HeaderTitle>
         <hr />
         <SubHead>
-          {date}
           <Links>
             {link && <CustomLink url={link}>DEMO</CustomLink>}
             <IconLink git url={git} />
           </Links>
+          {date}
         </SubHead>
         <Summary>{summary}</Summary>
       </SummaryBox>
-      {/* <img src={preview.url} /> */}
+      <ImgContainer>
+        <StyledImg
+          src={preview.url}
+          width={preview.dimensions.width}
+          height={preview.dimensions.height}
+        />
+      </ImgContainer>
     </HeadContainer>
   )
 }
