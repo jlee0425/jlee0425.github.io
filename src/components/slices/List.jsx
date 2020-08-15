@@ -11,10 +11,8 @@ const List = ({
     <SliceContainer>
       <Content>
         <Title>{title1[0].text}</Title>
-        {list.map((li, index) => (
-          <div key={index}>
-            {index + 1}. {li.text}
-          </div>
+        {list.map((item, i) => (
+          <li key={i}>{item.text}</li>
         ))}
       </Content>
     </SliceContainer>
