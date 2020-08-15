@@ -292,8 +292,8 @@ const Resume = ({ location }) => {
           <Body>
             <ul>
               <li>
-                Learned to prioritize tasks and distribute them according to
-                each staff’s capability.
+                Prioritized tasks and distributed them according to each staff’s
+                capability.
               </li>
               <li>
                 Trained new people in a way that they would feel welcomed and
@@ -306,8 +306,8 @@ const Resume = ({ location }) => {
           <Body>
             <ul>
               <li>
-                Learned to work in a fast-paced restaurant while maintaining
-                high customer satisfaction and efficiency
+                Worked in a fast-paced restaurant while maintaining high
+                customer satisfaction and efficiency
               </li>
             </ul>
           </Body>
@@ -323,10 +323,7 @@ const Resume = ({ location }) => {
                 Used and placed various lightings for different shots in a photo
                 studio for a wedding, family and etc.
               </li>
-              <li>
-                Learned editing photos and videos using Adobe Lightroom and
-                Adobe Photoshop.
-              </li>
+              <li>Editing photo using Adobe Lightroom and Adobe Photoshop.</li>
             </ul>
           </Body>
         </GridItem>
