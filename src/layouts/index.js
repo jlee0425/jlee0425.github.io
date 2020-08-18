@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
 
 import Header from '../components/header'
-import Footer from '../components/footer'
 
 const Global = createGlobalStyle`
   body {
@@ -50,7 +49,6 @@ const Layout = ({ children, location }) => {
       <Global />
       <Header />
       <TransitionViews>{children}</TransitionViews>
-      <Footer />
     </TransitionProvider>
   )
 }
