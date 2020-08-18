@@ -69,7 +69,7 @@ const Head = ({ title, date, summary, git, link, preview }) => {
         <hr />
         <SubHead>
           <Links>
-            {link && <CustomLink url={link}>DEMO</CustomLink>}
+            {link && <CustomLink href={link}>DEMO</CustomLink>}
             <IconLink git url={git} />
           </Links>
           {date}
