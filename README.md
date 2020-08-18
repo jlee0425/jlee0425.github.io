@@ -1,6 +1,6 @@
 # Jake Lee's Personal Portfolio
 
-This branch is the source code of my portfolio website, and the website is currently live at: [jlee0425.github.io](https://jlee0425.github.io/)
+This branch is the source code of my portfolio website.
 
 ## Note
 
