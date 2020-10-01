@@ -1,12 +1,10 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { TransitionLink } from 'gatsby-plugin-transitions'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import IconLink from '../components/iconLink'
-import SEO from '../components/seo'
+import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import styled from "styled-components"
+
+import { SEO, useViewWidth } from "../components"
+import Projects from "../components/Projects"
 
 const Background = styled(Img)`
   position: absolute;
@@ -17,7 +15,7 @@ const Background = styled(Img)`
   & > img {
     object-fit: cover !important;
     object-position: 0% 0% !important;
-    font-family: 'object-fit: cover !important; object-position: 0% 0% !important;';
+    font-family: "object-fit: cover !important; object-position: 0% 0% !important;";
   }
   @media screen and (max-width: 600px) {
     height: ${({ mobileHeight }) => mobileHeight};
@@ -32,7 +30,7 @@ const Main = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 85%;
+  height: 100%;
 `
 const Name = styled.h1`
   margin-top: 0;
@@ -47,29 +45,24 @@ const Avatar = styled(Img)`
   border-radius: 50%;
   box-shadow: 1px 1px 2px lightgrey;
 `
-const Sub = styled.div`
+const Cards = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 40vw;
-  max-width: 350px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  @media (max-width: 800px) {
-    flex-direction: column;
-    height: 20vh;
-    justify-content: space-between;
-    align-items: center;
-  }
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `
-const Icons = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 40%;
-  min-width: 100px;
+const H5 = styled.h5`
+  text-align: center;
+  text-shadow: 0.2px 0.2px #29323c;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 1rem;
 `
+
 const IndexPage = ({ location }) => {
   const {
-    allFile: { edges }
+    allFile: { edges },
   } = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { in: "main" } }) {
@@ -86,71 +79,26 @@ const IndexPage = ({ location }) => {
       }
     }
   `)
-  const coverImg = edges.find(edge => edge.node.name === 'coverImg')
-  const avatarImg = edges.find(edge => edge.node.name === 'avatar')
+  const viewWidth = useViewWidth()
+  const [projectLength, setProjectLength] = useState(viewWidth > 768 ? 3 : 2)
+  const coverImg = edges.find(edge => edge.node.name === "coverImg")
+  const avatarImg = edges.find(edge => edge.node.name === "avatar")
+
+  useEffect(() => {
+    setProjectLength(viewWidth > 768 ? 3 : 2)
+  }, [viewWidth])
   return (
     <>
-      <SEO title='Home' />
+      <SEO title="Home" />
       <Background fluid={coverImg.node.childImageSharp.fluid} />
       <Main>
         <Avatar fluid={avatarImg.node.childImageSharp.fluid} />
-        <h1 style={{ marginBottom: '0' }}>Hello, World!</h1>
+        <h1 style={{ marginBottom: "0" }}>Hello, World!</h1>
         <Name>I'm Jake.</Name>
-        <Sub>
-          <TransitionLink
-            to='/projects'
-            mode='immediate'
-            leave={{
-              opacity: 0,
-              transform: 'translate3d(100%, 0, 0) scale3d(0.5, 0.5, 1)',
-              config: {
-                duration: 500
-              }
-            }}
-            enter={{
-              opacity: 0,
-              transform: 'translate3d(-100%, 0, 0) scale3d(1, 1, 1)'
-            }}
-            usual={{
-              opacity: 1,
-              transform: 'translate3d(0%, 0, 0) scale3d(1, 1, 1)'
-            }}
-          >
-            <FontAwesomeIcon icon={faAngleLeft} />
-            <span> Projects</span>
-          </TransitionLink>
-          <Icons>
-            <IconLink git url='https://github.com/jlee0425' />
-            <IconLink
-              instagram
-              url='https://www.instagram.com/jake_jklee/'
-              // style={{ margin: '15px' }}
-            />
-            <IconLink linkedin url='https://linkedin.com/in/jakejlee' />
-          </Icons>
-          <TransitionLink
-            to='/resume'
-            mode='immediate'
-            leave={{
-              opacity: 0,
-              transform: 'translate3d(-100%, 0, 0) scale3d(0.5, 0.5, 1)',
-              config: {
-                duration: 500
-              }
-            }}
-            enter={{
-              opacity: 0,
-              transform: 'translate3d(100%, 0, 0) scale3d(1, 1, 1)'
-            }}
-            usual={{
-              opacity: 1,
-              transform: 'translate3d(0%, 0, 0) scale3d(1, 1, 1)'
-            }}
-          >
-            <span>Resume </span>
-            <FontAwesomeIcon icon={faAngleRight} />
-          </TransitionLink>
-        </Sub>
+        <H5>SOME OF MY LATEST WORK</H5>
+        <Cards>
+          <Projects cardSize="25vh" length={projectLength} />
+        </Cards>
       </Main>
     </>
   )

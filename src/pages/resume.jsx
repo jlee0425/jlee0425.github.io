@@ -1,23 +1,22 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons'
-import styled from 'styled-components'
-import IconLink from '../components/iconLink'
-import SEO from '../components/seo'
+import React from "react"
+import styled from "styled-components"
+
+import { SEO } from "../components"
+import { IconLink } from "../components/Links"
+import links from "../data/links.json"
 
 const ResumeContainer = styled.div`
   display: grid;
-  margin: 7vh 10vw;
+  margin: 2vh 10vw;
   grid-template-columns: 1fr 1fr;
-  gap: 5px 5px;
+  gap: 1rem 1rem;
   grid-template-areas:
-    'Head Head'
-    'About About'
-    'Projects Skills'
-    'Projects Extra-Curricular'
-    'Education Education'
-    'Experience Experience';
+    "Head Head"
+    "About About"
+    "Projects Skills"
+    "Projects Extra-Curricular"
+    "Education Education"
+    "Experience Experience";
 
   @media (max-width: 992px) {
     display: flex;
@@ -49,9 +48,9 @@ const GridItem = styled.section`
 const Title = styled.div`
   display: flex;
   justify-content: space-between;
-  font-weight: ${props => props.small || 'bold'};
-  font-size: ${props => (props.small ? '1.2rem' : '1.5rem')};
-  margin-top: ${props => props.small && '15px'};
+  font-weight: ${props => props.small || "bold"};
+  font-size: ${props => (props.small ? "1.2rem" : "1.5rem")};
+  margin-top: ${props => props.small && "15px"};
   margin-bottom: 3px;
 `
 const SubHead = styled.div`
@@ -83,8 +82,10 @@ const CustomLink = styled.a`
 const Links = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 20%;
+  font-size: 1.2rem;
+  & > * {
+    margin: 0 0.5rem;
+  }
 `
 const H3 = styled.h3`
   margin: 0;
@@ -93,31 +94,20 @@ const H3 = styled.h3`
   font-size: 1rem;
 `
 const Resume = ({ location }) => {
+  const link = links.slice(1)
   return (
     <>
-      <SEO title='Resume' />
+      <SEO title="Resume" />
       <ResumeContainer>
-        <Head style={{ gridArea: 'Head' }}>
-          <h1>Jake Lee</h1>
-          <span>
-            <a href='https://github.com/jlee0425'>
-              <FontAwesomeIcon icon={faGithub} />
-            </a>{' '}
-            |{' '}
-            <a href='https://linkedin.com/in/jakejlee'>
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>{' '}
-            |{' '}
-            <a href='mailto: jake.jklee425@gmail.com'>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </a>{' '}
-            |{' '}
-            <a href='https://docs.google.com/document/d/1_fGxaLbaLcb0pmQ6fwViV4zCg6n0x0AO3qCBBkrIlvE/edit?usp=sharing'>
-              <FontAwesomeIcon icon={faFileDownload} />
-            </a>
-          </span>
+        <Head style={{ gridArea: "Head" }}>
+          <h1 style={{ marginBottom: "1rem" }}>Jake Lee</h1>
+          <Links>
+            {link.map((icon, index) => (
+              <IconLink type={icon.type} url={icon.url} key={index} />
+            ))}
+          </Links>
         </Head>
-        <GridItem style={{ gridArea: 'About' }}>
+        <GridItem style={{ gridArea: "About" }}>
           <Title>I am</Title>
           <Body>
             <p>
@@ -138,17 +128,17 @@ const Resume = ({ location }) => {
             </p>
           </Body>
         </GridItem>
-        <GridItem style={{ gridArea: 'Projects' }}>
+        <GridItem style={{ gridArea: "Projects" }}>
           <Title>Projects</Title>
           <Title small>
             Sorting Visualizer
             <Links>
-              <CustomLink href='https://quirky-swirles-9080c2.netlify.app/'>
+              <CustomLink href="https://quirky-swirles-9080c2.netlify.app/">
                 LIVE
               </CustomLink>
               <IconLink
-                git
-                url='https://github.com/jlee0425/Sorting-Visualizer'
+                type="git"
+                url="https://github.com/jlee0425/Sorting-Visualizer"
               />
             </Links>
           </Title>
@@ -171,8 +161,11 @@ const Resume = ({ location }) => {
           <Title small>
             Movie Browser
             <Links>
-              <CustomLink href='https://youtu.be/wGMgR8q_aRs'>DEMO</CustomLink>
-              <IconLink git url='https://github.com/jlee0425/Movie_Browser' />
+              <CustomLink href="https://youtu.be/wGMgR8q_aRs">DEMO</CustomLink>
+              <IconLink
+                type="git"
+                url="https://github.com/jlee0425/Movie_Browser"
+              />
             </Links>
           </Title>
           <SubHead>
@@ -201,12 +194,12 @@ const Resume = ({ location }) => {
           <Title small>
             COVID-19 Tracker
             <Links>
-              <CustomLink href='https://blissful-saha-fa57eb.netlify.app/'>
+              <CustomLink href="https://blissful-saha-fa57eb.netlify.app/">
                 LIVE
               </CustomLink>
               <IconLink
-                git
-                url='https://github.com/jlee0425/covid-19-tracker'
+                type="git"
+                url="https://github.com/jlee0425/covid-19-tracker"
               />
             </Links>
           </Title>
@@ -227,25 +220,25 @@ const Resume = ({ location }) => {
             </ul>
           </Body>
         </GridItem>
-        <GridItem style={{ gridArea: 'Extra-Curricular' }}>
+        <GridItem style={{ gridArea: "Extra-Curricular" }}>
           <Title>Extra-curricular</Title>
           <Title small>CS50: Mobile App Development with React Native</Title>
           <SubHead>
-            HarvardX{' '}
-            <CustomLink href='https://courses.edx.org/certificates/3e32c0e899c34f95a884c8e1f7c66d62'>
+            HarvardX{" "}
+            <CustomLink href="https://courses.edx.org/certificates/3e32c0e899c34f95a884c8e1f7c66d62">
               Certificate
             </CustomLink>
           </SubHead>
           <Body>
             <p>
-              Learned and built a few apps using{' '}
+              Learned and built a few apps using{" "}
               <strong>React, React Native, Expo, and Redux</strong>.
             </p>
           </Body>
           <Title small>CS50: Introduction to Computer Science</Title>
           <SubHead>
             HarvardX
-            <CustomLink href='https://courses.edx.org/certificates/aa35b41d2eb843579465836749a0f3f7'>
+            <CustomLink href="https://courses.edx.org/certificates/aa35b41d2eb843579465836749a0f3f7">
               Certificate
             </CustomLink>
           </SubHead>
@@ -257,8 +250,8 @@ const Resume = ({ location }) => {
           </Body>
           <Title small>Advanced C++</Title>
           <SubHead>
-            Microsoft{' '}
-            <CustomLink href='https://courses.edx.org/certificates/75582221e3d0474ab6fb931d0df47956'>
+            Microsoft{" "}
+            <CustomLink href="https://courses.edx.org/certificates/75582221e3d0474ab6fb931d0df47956">
               Certificate
             </CustomLink>
           </SubHead>
@@ -269,7 +262,7 @@ const Resume = ({ location }) => {
             </p>
           </Body>
         </GridItem>
-        <GridItem style={{ gridArea: 'Skills' }}>
+        <GridItem style={{ gridArea: "Skills" }}>
           <Title>Skills</Title>
           <H3>Frontend</H3>
           <Body> - React, Redux, HTML, CSS, JS, ReactNative</Body>
@@ -278,14 +271,14 @@ const Resume = ({ location }) => {
           <H3>Others</H3>
           <Body>- Java, Python, Oracle SQL, SQLite, Bash, Git, Lightroom</Body>
         </GridItem>
-        <GridItem style={{ gridArea: 'Education' }}>
+        <GridItem style={{ gridArea: "Education" }}>
           <Title>Education</Title>
           <Title small>
             Langara College - Associate of Science: Science General
           </Title>
           <SubHead>May 2017 - Dec 2019 (Dean's Honour Roll)</SubHead>
         </GridItem>
-        <GridItem style={{ gridArea: 'Experience' }}>
+        <GridItem style={{ gridArea: "Experience" }}>
           <Title>Experience</Title>
           <Title small>Gyukaku Broadway - Server</Title>
           <SubHead>Oct 2015 - Oct 2018, Vancouver. BC</SubHead>

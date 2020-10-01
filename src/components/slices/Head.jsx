@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import IconLink from '../iconLink'
+import { IconLink } from '../Links'
 
 const HeadContainer = styled.div`
   display: flex;

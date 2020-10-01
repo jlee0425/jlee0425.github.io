@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Head } from '../components/slices'
+import SEO from '../components/SEO'
+import { Head } from '../components/Slices'
 import SliceZone from '../components/SliceZone'
 
 const Container = styled.div`
@@ -19,17 +20,20 @@ const Project = ({ data: { prismic } }) => {
   const { project: data } = prismic
 
   return (
-    <Container>
-      <Head
-        title={data.title[0]?.text}
-        date={data.date[0]?.text}
-        summary={data.summary[0]?.text}
-        git={data.git?.url}
-        link={data.link?.url}
-        preview={data.preview}
-      />
-      <SliceZone slices={data?.body} />
-    </Container>
+    <>
+      <SEO title={`${data.title[0].text}`} />
+      <Container>
+        <Head
+          title={data.title[0]?.text}
+          date={data.date[0]?.text}
+          summary={data.summary[0]?.text}
+          git={data.git?.url}
+          link={data.link?.url}
+          preview={data.preview}
+        />
+        <SliceZone slices={data?.body} />
+      </Container>
+    </>
   )
 }
 
