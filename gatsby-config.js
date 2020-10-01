@@ -52,7 +52,7 @@ module.exports = {
         pages: [
           {
             type: 'Project',
-            match: '/projects/:uid',
+            match: '/portfolio/:uid',
             component: require.resolve('./src/templates/Project.jsx')
           }
         ],
