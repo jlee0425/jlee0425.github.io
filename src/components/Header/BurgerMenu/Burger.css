@@ -1,0 +1,9 @@
+.burger .burger-lines,
+.burger .burger-lines:after,
+.burger .burger-lines:before {
+  background-color: whitesmoke;
+}
+
+.burger .burger-lines {
+  font-size: 10px;
+}
