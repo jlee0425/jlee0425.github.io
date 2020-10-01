@@ -1,4 +1,4 @@
-import CustomTransitionLink from './CustomTransitionLink'
-import IconLink from './IconLink'
+import CustomTransitionLink from "./CustomTransitionLink";
+import IconLink from "./IconLink";
 
-export { CustomTransitionLink, IconLink }
+export { CustomTransitionLink, IconLink };

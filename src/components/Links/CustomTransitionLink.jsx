@@ -1,5 +1,5 @@
-import React from "react"
-import { TransitionLink } from "gatsby-plugin-transitions"
+import React from "react";
+import { TransitionLink } from "gatsby-plugin-transitions";
 
 const CustomTransitionLink = ({ item: { to, title } }) => (
   <TransitionLink
@@ -23,6 +23,6 @@ const CustomTransitionLink = ({ item: { to, title } }) => (
   >
     {title}
   </TransitionLink>
-)
+);
 
-export default CustomTransitionLink
+export default CustomTransitionLink;

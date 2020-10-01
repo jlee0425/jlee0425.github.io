@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import { SEO } from "../components"
-import { IconLink } from "../components/Links"
-import links from "../data/links.json"
+import { SEO } from "../components";
+import { IconLink } from "../components/Links";
+import links from "../data/links.json";
 
 const ResumeContainer = styled.div`
   display: grid;
@@ -22,7 +22,7 @@ const ResumeContainer = styled.div`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 const Head = styled.div`
   display: flex;
   flex-direction: column;
@@ -40,12 +40,12 @@ const Head = styled.div`
     margin: 15px;
     font-size: 1.2rem;
   }
-`
+`;
 const GridItem = styled.section`
   box-shadow: 2px 2px 7px #c5c4c4;
   border-radius: 5px;
   padding: 10px;
-`
+`;
 const Title = styled.div`
   display: flex;
   justify-content: space-between;
@@ -53,14 +53,14 @@ const Title = styled.div`
   font-size: ${props => (props.small ? "1.2rem" : "1.5rem")};
   margin-top: ${props => props.small && "15px"};
   margin-bottom: 3px;
-`
+`;
 const SubHead = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
   color: grey;
-`
+`;
 const Body = styled.section`
   font-size: 0.9rem;
   color: #2f3030;
@@ -70,7 +70,7 @@ const Body = styled.section`
   * {
     margin-top: 5px;
   }
-`
+`;
 const CustomLink = styled.a`
   padding: 0 3px;
   border: 1px solid;
@@ -79,7 +79,7 @@ const CustomLink = styled.a`
   text-align: center;
   background: rgb(30, 43, 49);
   color: white;
-`
+`;
 const Links = styled.div`
   display: flex;
   align-items: center;
@@ -87,15 +87,15 @@ const Links = styled.div`
   & > * {
     margin: 0 0.7rem;
   }
-`
+`;
 const H3 = styled.h3`
   margin: 0;
   margin-top: 15px;
   margin-bottom: 5px;
   font-size: 1rem;
-`
+`;
 const Resume = ({ location }) => {
-  const link = links.slice(1)
+  const link = links.slice(1);
   return (
     <>
       <SEO title="Resume" />
@@ -328,7 +328,7 @@ const Resume = ({ location }) => {
         </GridItem>
       </ResumeContainer>
     </>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;

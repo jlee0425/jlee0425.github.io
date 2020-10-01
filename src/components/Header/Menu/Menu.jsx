@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components"
-import links from "../../../data/links.json"
-import { CustomTransitionLink, IconLink } from "../../Links"
-import MenuItem from "./MenuItem"
+import React from "react";
+import styled from "styled-components";
+import links from "../../../data/links.json";
+import { CustomTransitionLink, IconLink } from "../../Links";
+import MenuItem from "./MenuItem";
 
 const Icons = styled.div`
   display: flex;
@@ -24,13 +24,13 @@ const Icons = styled.div`
       }
     }
     `}
-`
+`;
 const Menu = ({ handleClick, isBurger }) => {
   const menu = [
     { to: "/portfolio", title: "Portfolio" },
     { to: "/resume", title: "Resume" },
-  ]
-  const link = links.slice(0, 3)
+  ];
+  const link = links.slice(0, 3);
   return (
     <>
       {menu.map((item, index) => (
@@ -54,7 +54,7 @@ const Menu = ({ handleClick, isBurger }) => {
         ))}
       </Icons>
     </>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

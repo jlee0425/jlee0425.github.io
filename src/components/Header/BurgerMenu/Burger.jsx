@@ -1,9 +1,9 @@
-import React from "react"
-import Burger from "@animated-burgers/burger-rotate"
-import "@animated-burgers/burger-rotate/dist/styles.css"
-import styled, { keyframes } from "styled-components"
-import Menu from "../Menu"
-import "./Burger.css"
+import React from "react";
+import Burger from "@animated-burgers/burger-rotate";
+import "@animated-burgers/burger-rotate/dist/styles.css";
+import styled, { keyframes } from "styled-components";
+import Menu from "../Menu";
+import "./Burger.css";
 const SlideOut = keyframes`
   from {
     transform: 'translateX(-100%)';
@@ -11,7 +11,7 @@ const SlideOut = keyframes`
   to {
     transform: 'translateX(0)';
   }
-`
+`;
 const SlideIn = keyframes`
   from {
     transform: 'translateX(0)';
@@ -20,13 +20,13 @@ const SlideIn = keyframes`
     visibility: 'hidden';
     transform: 'translateX(-100%)';
   }
-`
+`;
 const CustomBurger = styled(Burger)`
   position: fixed;
   right: 0;
   margin-right: 2.5rem;
   z-index: 10;
-`
+`;
 const BurgerMenuContainer = styled.div`
   position: absolute;
   top: 75px;
@@ -52,9 +52,9 @@ const BurgerMenuContainer = styled.div`
       margin-top: 1rem;
     }
   }
-`
+`;
 const BurgerMenu = ({ isOpen, setOpen, handleClick }) => {
-  const isExpanded = isOpen
+  const isExpanded = isOpen;
   return (
     <>
       <CustomBurger onClick={() => setOpen(!isExpanded)} isOpen={isOpen} />
@@ -64,7 +64,7 @@ const BurgerMenu = ({ isOpen, setOpen, handleClick }) => {
         </BurgerMenuContainer>
       )}
     </>
-  )
-}
+  );
+};
 
-export default BurgerMenu
+export default BurgerMenu;

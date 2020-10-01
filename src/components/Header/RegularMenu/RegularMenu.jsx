@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import Menu from "../Menu"
+import React from "react";
+import styled from "styled-components";
+import Menu from "../Menu";
 
 const Container = styled.div`
   position: relative;
@@ -17,13 +17,13 @@ const Container = styled.div`
       margin-left: 2rem;
     }
   }
-`
+`;
 const RegularMenu = ({ handleClick }) => {
   return (
     <Container>
       <Menu handleClick={handleClick} isBurger={false} />
     </Container>
-  )
-}
+  );
+};
 
-export default RegularMenu
+export default RegularMenu;

@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import { SEO } from "../components"
-import Projects from "../components/Projects"
+import { SEO } from "../components";
+import Projects from "../components/Projects";
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   height: 80%;
   padding: 75px;
-`
+`;
 const Portfolio = ({ location }) => {
   return (
     <>
@@ -19,7 +19,7 @@ const Portfolio = ({ location }) => {
         <Projects cardSize="40vh" />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

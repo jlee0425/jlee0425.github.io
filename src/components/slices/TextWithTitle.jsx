@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import { SliceContainer, Content, Title, Paragraph } from './StyledComponents'
+import { SliceContainer, Content, Title, Paragraph } from "./StyledComponents";
 
 const TextWithTitle = ({ slice }) => {
   return (
@@ -12,7 +12,7 @@ const TextWithTitle = ({ slice }) => {
         ))}
       </Content>
     </SliceContainer>
-  )
-}
+  );
+};
 
-export default TextWithTitle
+export default TextWithTitle;

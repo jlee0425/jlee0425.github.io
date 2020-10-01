@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import styled from "styled-components"
+import React from "react";
+import { graphql } from "gatsby";
+import styled from "styled-components";
 
-import SEO from "../components/SEO"
-import { Head } from "../components/Slices"
-import SliceZone from "../components/SliceZone"
+import SEO from "../components/SEO";
+import { Head } from "../components/Slices";
+import SliceZone from "../components/SliceZone";
 
 const Container = styled.div`
   height: 100%;
@@ -13,10 +13,10 @@ const Container = styled.div`
   @media (max-width: 1024px) {
     padding: 75px 2rem;
   }
-`
+`;
 
 const Project = ({ data: { prismic } }) => {
-  const { project: data } = prismic
+  const { project: data } = prismic;
 
   return (
     <>
@@ -33,10 +33,10 @@ const Project = ({ data: { prismic } }) => {
         <SliceZone slices={data?.body} />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;
 
 export const pageQuery = graphql`
   query PostBySlug($uid: String!) {
@@ -95,4 +95,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

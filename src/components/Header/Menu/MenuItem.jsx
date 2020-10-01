@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const Item = styled.div`
   cursor: pointer;
@@ -9,14 +9,14 @@ const Item = styled.div`
   > * {
     color: whitesmoke;
   }
-`
+`;
 
 const MenuItem = ({ children, delay, onClick }) => {
   return (
     <Item delay={delay} onClick={onClick}>
       {children}
     </Item>
-  )
-}
+  );
+};
 
-export default MenuItem
+export default MenuItem;

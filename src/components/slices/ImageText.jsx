@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import {
   SliceContainer,
@@ -8,16 +8,16 @@ import {
   ImgSection,
   ImgContainer,
   StyledImg,
-  AltText
-} from './StyledComponents'
+  AltText,
+} from "./StyledComponents";
 
 const ImageText = ({
   slice: {
     primary: { title1 },
-    fields
-  }
+    fields,
+  },
 }) => {
-  const imgs = [fields[0].img1, fields[0].img2]
+  const imgs = [fields[0].img1, fields[0].img2];
   return (
     <SliceContainer>
       <Content>
@@ -28,7 +28,7 @@ const ImageText = ({
                 <StyledImg src={image.url} />
                 <AltText>{image.alt}</AltText>
               </ImgContainer>
-            ) : null
+            ) : null;
           })}
         </ImgSection>
         <Title>{title1[0].text}</Title>
@@ -37,7 +37,7 @@ const ImageText = ({
         ))}
       </Content>
     </SliceContainer>
-  )
-}
+  );
+};
 
-export default ImageText
+export default ImageText;

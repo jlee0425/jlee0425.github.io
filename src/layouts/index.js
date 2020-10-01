@@ -1,8 +1,8 @@
-import React from "react"
-import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
-import PropTypes from "prop-types"
-import { createGlobalStyle } from "styled-components"
-import Header from "../components/Header"
+import React from "react";
+import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
+import PropTypes from "prop-types";
+import { createGlobalStyle } from "styled-components";
+import Header from "../components/Header";
 
 const Global = createGlobalStyle`
   body {
@@ -26,7 +26,7 @@ const Global = createGlobalStyle`
       box-sizing: border-box;
     }     
   }
-`
+`;
 const Layout = ({ children, location }) => {
   return (
     <TransitionProvider
@@ -52,11 +52,11 @@ const Layout = ({ children, location }) => {
       <Header />
       <TransitionViews>{children}</TransitionViews>
     </TransitionProvider>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

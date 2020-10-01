@@ -1,9 +1,9 @@
-import { TransitionLink } from "gatsby-plugin-transitions"
-import React, { useEffect, useState } from "react"
-import styled from "styled-components"
-import { useViewWidth } from "../"
-import BurgerMenu from "./BurgerMenu"
-import RegularMenu from "./RegularMenu"
+import { TransitionLink } from "gatsby-plugin-transitions";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { useViewWidth } from "../";
+import BurgerMenu from "./BurgerMenu";
+import RegularMenu from "./RegularMenu";
 
 const Navbar = styled.div`
   position: fixed;
@@ -16,7 +16,7 @@ const Navbar = styled.div`
   color: black;
   background: #101010;
   z-index: 2;
-`
+`;
 const Logo = styled.img`
   display: block;
   max-height: 60px;
@@ -24,21 +24,21 @@ const Logo = styled.img`
   height: 100%;
   width: 100%;
   margin: auto 1rem;
-`
+`;
 
 const Header = () => {
-  const viewWidth = useViewWidth()
-  const [isBurger, setBurger] = useState(false)
-  const [open, setOpen] = useState(false)
-  const handleMenuClick = () => setOpen(false)
+  const viewWidth = useViewWidth();
+  const [isBurger, setBurger] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleMenuClick = () => setOpen(false);
 
   useEffect(() => {
     if (viewWidth < 810) {
-      setBurger(true)
+      setBurger(true);
     } else {
-      setBurger(false)
+      setBurger(false);
     }
-  }, [viewWidth])
+  }, [viewWidth]);
   return (
     <Navbar isBurger={isBurger} isOpen={open}>
       <div>
@@ -77,7 +77,7 @@ const Header = () => {
         <RegularMenu handleClick={handleMenuClick} />
       )}
     </Navbar>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import { SliceContainer, Content, Title } from './StyledComponents'
+import { SliceContainer, Content, Title } from "./StyledComponents";
 
 const List = ({
   slice: {
-    primary: { title1, list }
-  }
+    primary: { title1, list },
+  },
 }) => {
   return (
     <SliceContainer>
@@ -16,7 +16,7 @@ const List = ({
         ))}
       </Content>
     </SliceContainer>
-  )
-}
+  );
+};
 
-export default List
+export default List;

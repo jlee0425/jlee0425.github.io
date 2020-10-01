@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 import {
   SliceContainer,
   ImgSection,
   StyledImg,
   ImgContainer,
-  AltText
-} from './StyledComponents'
+  AltText,
+} from "./StyledComponents";
 
 const ImageWithCaption = ({ slice }) => {
   return (
@@ -18,7 +18,7 @@ const ImageWithCaption = ({ slice }) => {
         </ImgContainer>
       </ImgSection>
     </SliceContainer>
-  )
-}
+  );
+};
 
-export default ImageWithCaption
+export default ImageWithCaption;
