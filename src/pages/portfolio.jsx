@@ -8,8 +8,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  height: 80vh;
-  padding-bottom: 3vh;
+  height: 80%;
+  padding: 75px;
 `
 const Portfolio = ({ location }) => {
   return (

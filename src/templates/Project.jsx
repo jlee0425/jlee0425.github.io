@@ -1,18 +1,17 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
 
-import SEO from '../components/SEO'
-import { Head } from '../components/Slices'
-import SliceZone from '../components/SliceZone'
+import SEO from "../components/SEO"
+import { Head } from "../components/Slices"
+import SliceZone from "../components/SliceZone"
 
 const Container = styled.div`
   height: 100%;
-  margin: 5vh 0;
-  padding: 1rem 10rem;
+  padding: 75px 10rem;
 
   @media (max-width: 1024px) {
-    padding: 1rem 2rem;
+    padding: 75px 2rem;
   }
 `
 

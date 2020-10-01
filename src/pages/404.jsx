@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const Main = styled.div`
-  padding: 8vh;
+  padding: 75px;
 `
 const NotFound = ({ location }) => {
   return (

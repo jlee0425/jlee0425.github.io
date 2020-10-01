@@ -2,7 +2,6 @@ import React from "react"
 import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
 import PropTypes from "prop-types"
 import { createGlobalStyle } from "styled-components"
-
 import Header from "../components/Header"
 
 const Global = createGlobalStyle`
@@ -51,9 +50,7 @@ const Layout = ({ children, location }) => {
     >
       <Global />
       <Header />
-      <TransitionViews style={{ paddingTop: "75px" }}>
-        {children}
-      </TransitionViews>
+      <TransitionViews>{children}</TransitionViews>
     </TransitionProvider>
   )
 }

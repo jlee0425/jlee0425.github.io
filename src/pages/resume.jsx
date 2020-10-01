@@ -7,7 +7,7 @@ import links from "../data/links.json"
 
 const ResumeContainer = styled.div`
   display: grid;
-  margin: 2vh 10vw;
+  padding: 75px 10vw;
   grid-template-columns: 1fr 1fr;
   gap: 1rem 1rem;
   grid-template-areas:
@@ -28,6 +28,7 @@ const Head = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 25px;
   background: linear-gradient(270deg, #29323c, #485563);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,7 +85,7 @@ const Links = styled.div`
   align-items: center;
   font-size: 1.2rem;
   & > * {
-    margin: 0 0.5rem;
+    margin: 0 0.7rem;
   }
 `
 const H3 = styled.h3`
@@ -103,7 +104,12 @@ const Resume = ({ location }) => {
           <h1 style={{ marginBottom: "1rem" }}>Jake Lee</h1>
           <Links>
             {link.map((icon, index) => (
-              <IconLink type={icon.type} url={icon.url} key={index} />
+              <IconLink
+                type={icon.type}
+                url={icon.url}
+                title={icon.title}
+                key={index}
+              />
             ))}
           </Links>
         </Head>
