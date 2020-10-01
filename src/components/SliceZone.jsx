@@ -1,6 +1,6 @@
 import React from 'react'
-import { ImageWithCaption, TextWithTitle, List, ImageText } from './slices'
-import { Separator } from './slices/StyledComponents'
+import { ImageWithCaption, TextWithTitle, List, ImageText } from './Slices'
+import { Separator } from './Slices/StyledComponents'
 
 const SliceZone = ({ slices }) => {
   const sliceComponents = {

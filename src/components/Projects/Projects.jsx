@@ -1,20 +1,10 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import styled from 'styled-components'
 
-import ProjectCard from '../components/projectCard'
-import projectList from '../data/projects.json'
-import SEO from '../components/seo'
+import ProjectCard from './ProjectCard'
+import projectList from '../../data/projects.json'
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 7vh;
-  flex-wrap: wrap;
-  height: 100%;
-  padding-bottom: 3vh;
-`
-const Projects = ({ location }) => {
+const Projects = ({ length, cardSize }) => {
   const {
     projectImages: { edges }
   } = useStaticQuery(graphql`
@@ -35,7 +25,7 @@ const Projects = ({ location }) => {
       }
     }
   `)
-  const projects = projectList.map(project => {
+  const projects = projectList.slice(0, length).map(project => {
     const image = edges.find(
       image => image.node.relativePath === `thumbnails/${project.thumbnail}`
     )
@@ -46,16 +36,9 @@ const Projects = ({ location }) => {
     }
     return { ...data }
   })
-  return (
-    <>
-      <SEO title='Projects' />
-      <Container>
-        {projects.map(project => (
-          <ProjectCard data={project} key={project.title} />
-        ))}
-      </Container>
-    </>
-  )
+  return projects.map(project => (
+    <ProjectCard data={project} key={project.title} cardSize={cardSize} />
+  ))
 }
 
 export default Projects
