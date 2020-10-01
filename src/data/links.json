@@ -1,13 +1,27 @@
 [
-  { "type": "instagram", "url": "https://www.instagram.com/jake_jklee/" },
+  {
+    "type": "instagram",
+    "url": "https://www.instagram.com/jake_jklee/",
+    "title": "Instagram"
+  },
   {
     "type": "git",
-    "url": "https://github.com/jlee0425"
+    "url": "https://github.com/jlee0425",
+    "title": "Github"
   },
-  { "type": "linkedin", "url": "https://linkedin.com/in/jakejlee" },
-  { "type": "mail", "url": "mailto: jake.jklee425@gmail.com" },
+  {
+    "type": "linkedin",
+    "url": "https://linkedin.com/in/jakejlee",
+    "title": "LinkedIn"
+  },
+  {
+    "type": "mail",
+    "url": "mailto: jake.jklee425@gmail.com",
+    "title": "Email"
+  },
   {
     "type": "download",
-    "url": "https://docs.google.com/document/d/1_fGxaLbaLcb0pmQ6fwViV4zCg6n0x0AO3qCBBkrIlvE/edit?usp=sharing"
+    "url": "https://docs.google.com/document/d/1_fGxaLbaLcb0pmQ6fwViV4zCg6n0x0AO3qCBBkrIlvE/edit?usp=sharing",
+    "title": "Download the latest resume"
   }
 ]

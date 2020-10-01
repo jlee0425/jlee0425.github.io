@@ -1,28 +1,28 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
   faLinkedin,
-  faInstagram
-} from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons'
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope, faFileDownload } from "@fortawesome/free-solid-svg-icons"
 
-const IconLink = ({ url, style, type }) => {
+const IconLink = ({ url, style, type, title }) => {
   let icon
   switch (type) {
-    case 'git':
+    case "git":
       icon = faGithub
       break
-    case 'linkedin':
+    case "linkedin":
       icon = faLinkedin
       break
-    case 'instagram':
+    case "instagram":
       icon = faInstagram
       break
-    case 'mail':
+    case "mail":
       icon = faEnvelope
       break
-    case 'download':
+    case "download":
       icon = faFileDownload
       break
     default:
@@ -30,7 +30,7 @@ const IconLink = ({ url, style, type }) => {
   }
 
   return (
-    <a href={url} style={style}>
+    <a href={url} style={style} title={title}>
       <FontAwesomeIcon icon={icon} />
     </a>
   )
