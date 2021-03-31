@@ -272,10 +272,10 @@ const Resume = ({ location }) => {
           <Title>Skills</Title>
           <H3>Frontend</H3>
           <Body> - React, Redux, HTML, CSS, JS, ReactNative</Body>
-          <H3>Compiled</H3>
-          <Body> - C++, C</Body>
+          <H3>Backend</H3>
+          <Body> - Python Flask, Firebase, Node</Body>
           <H3>Others</H3>
-          <Body>- Java, Python, Oracle SQL, SQLite, Bash, Git, Lightroom</Body>
+          <Body> - C++, C, Java, Python, Serverless CMS, Oracle SQL, SQLite, Bash, Git, Lightroom</Body>
         </GridItem>
         <GridItem style={{ gridArea: "Education" }}>
           <Title>Education</Title>
