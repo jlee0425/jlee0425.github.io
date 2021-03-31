@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 import { Head } from "../components/Slices";
 import SliceZone from "../components/SliceZone";
 
@@ -20,7 +20,7 @@ const Project = ({ data: { prismic } }) => {
 
   return (
     <>
-      <SEO title={`${data.title[0].text}`} />
+      <Seo title={`${data.title[0].text}`} />
       <Container>
         <Head
           title={data.title[0]?.text}

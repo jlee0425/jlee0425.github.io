@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { SEO } from "../components";
+import { Seo } from "../components";
 import { IconLink } from "../components/Links";
 import links from "../data/links.json";
 
@@ -98,7 +98,7 @@ const Resume = ({ location }) => {
   const link = links.slice(1);
   return (
     <>
-      <SEO title="Resume" />
+      <Seo title="Resume" />
       <ResumeContainer>
         <Head style={{ gridArea: "Head" }}>
           <h1 style={{ marginBottom: "1rem" }}>Jake Lee</h1>

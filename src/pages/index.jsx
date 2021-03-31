@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
 
-import { SEO, useViewWidth } from "../components";
+import { Seo, useViewWidth } from "../components";
 import Projects from "../components/Projects";
 
 const Background = styled(Img)`
@@ -90,7 +90,7 @@ const IndexPage = ({ location }) => {
   }, [viewWidth]);
   return (
     <>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <Background fluid={coverImg.node.childImageSharp.fluid} />
       <Main>
         <Avatar fluid={avatarImg.node.childImageSharp.fluid} />

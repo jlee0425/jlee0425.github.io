@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { SEO } from "../components";
+import { Seo } from "../components";
 import Projects from "../components/Projects";
 
 const Container = styled.div`
@@ -14,7 +14,7 @@ const Container = styled.div`
 const Portfolio = ({ location }) => {
   return (
     <>
-      <SEO title="Portfolio" />
+      <Seo title="Portfolio" />
       <Container>
         <Projects cardSize="40vh" />
       </Container>
