@@ -3,6 +3,20 @@ import { TransitionLink } from "gatsby-plugin-transitions";
 import Img from "gatsby-image";
 import styled from "styled-components";
 
+const ProjectCard = ({ data: { title, desc, image, to }, cardSize }) => {
+  return (
+    <CardContainer to={to} cardSize={cardSize}>
+      <Content>
+        <Thumbnail fluid={image} objectFit="cover" objectPosition="top right" />
+        <DescriptionBox>
+          <Title>{title}</Title>
+          {cardSize === "40vh" && <Desc>{desc}</Desc>}
+        </DescriptionBox>
+      </Content>
+    </CardContainer>
+  );
+};
+
 const CardContainer = styled(TransitionLink)`
   display: flex;
   justify-content: center;
@@ -60,19 +74,5 @@ const Desc = styled.span`
   color: #cccccc;
   margin-bottom: 1.25rem;
 `;
-
-const ProjectCard = ({ data: { title, desc, image, to }, cardSize }) => {
-  return (
-    <CardContainer to={to} cardSize={cardSize}>
-      <Content>
-        <Thumbnail fluid={image} objectFit="cover" objectPosition="top right" />
-        <DescriptionBox>
-          <Title>{title}</Title>
-          {cardSize === "40vh" && <Desc>{desc}</Desc>}
-        </DescriptionBox>
-      </Content>
-    </CardContainer>
-  );
-};
 
 export default ProjectCard;

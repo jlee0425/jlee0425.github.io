@@ -3,6 +3,32 @@ import styled from "styled-components";
 
 import { IconLink } from "../Links";
 
+const Head = ({ title, date, summary, git, link, preview }) => {
+  return (
+    <HeadContainer>
+      <SummaryBox>
+        <HeaderTitle>{title}</HeaderTitle>
+        <hr />
+        <SubHead>
+          <Links>
+            {link && <CustomLink href={link}>DEMO</CustomLink>}
+            <IconLink git url={git} />
+          </Links>
+          {date}
+        </SubHead>
+        <Summary>{summary}</Summary>
+      </SummaryBox>
+      <ImgContainer>
+        <StyledImg
+          src={preview.url}
+          width={preview.dimensions.width}
+          height={preview.dimensions.height}
+        />
+      </ImgContainer>
+    </HeadContainer>
+  );
+};
+
 const HeadContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -60,31 +86,5 @@ const Links = styled.div`
   justify-content: space-between;
   width: 5rem;
 `;
-
-const Head = ({ title, date, summary, git, link, preview }) => {
-  return (
-    <HeadContainer>
-      <SummaryBox>
-        <HeaderTitle>{title}</HeaderTitle>
-        <hr />
-        <SubHead>
-          <Links>
-            {link && <CustomLink href={link}>DEMO</CustomLink>}
-            <IconLink git url={git} />
-          </Links>
-          {date}
-        </SubHead>
-        <Summary>{summary}</Summary>
-      </SummaryBox>
-      <ImgContainer>
-        <StyledImg
-          src={preview.url}
-          width={preview.dimensions.width}
-          height={preview.dimensions.height}
-        />
-      </ImgContainer>
-    </HeadContainer>
-  );
-};
 
 export default Head;

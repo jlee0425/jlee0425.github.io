@@ -4,6 +4,21 @@ import "@animated-burgers/burger-rotate/dist/styles.css";
 import styled, { keyframes } from "styled-components";
 import Menu from "../Menu";
 import "./Burger.css";
+
+const BurgerMenu = ({ isOpen, setOpen, handleClick }) => {
+  const isExpanded = isOpen;
+  return (
+    <>
+      <CustomBurger onClick={() => setOpen(!isExpanded)} isOpen={isOpen} />
+      {isOpen && (
+        <BurgerMenuContainer>
+          <Menu handleClick={handleClick} isBurger={true} />
+        </BurgerMenuContainer>
+      )}
+    </>
+  );
+};
+
 const SlideOut = keyframes`
   from {
     transform: 'translateX(-100%)';
@@ -42,8 +57,9 @@ const BurgerMenuContainer = styled.div`
   font-weight: 700;
   font-size: 2rem;
   background-color: #303030;
-  // animation: ${({ isOpen }) =>
-    isOpen ? `${SlideIn} forwards` : `${SlideOut}`};
+  `;
+  /* // animation: ${({ isOpen }) =>
+    isOpen ? `${SlideIn} forwards` : `${SlideOut}`;
   animation-duration: 0.5s;
   animation-timing-function: linear;
 
@@ -51,20 +67,6 @@ const BurgerMenuContainer = styled.div`
     &:not(:first-child) {
       margin-top: 1rem;
     }
-  }
-`;
-const BurgerMenu = ({ isOpen, setOpen, handleClick }) => {
-  const isExpanded = isOpen;
-  return (
-    <>
-      <CustomBurger onClick={() => setOpen(!isExpanded)} isOpen={isOpen} />
-      {isOpen && (
-        <BurgerMenuContainer>
-          <Menu handleClick={handleClick} isBurger={true} />
-        </BurgerMenuContainer>
-      )}
-    </>
-  );
-};
+  } */
 
 export default BurgerMenu;

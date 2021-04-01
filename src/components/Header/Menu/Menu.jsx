@@ -4,27 +4,6 @@ import links from "../../../data/links.json";
 import { CustomTransitionLink, IconLink } from "../../Links";
 import MenuItem from "./MenuItem";
 
-const Icons = styled.div`
-  display: flex;
-  flex-direction: ${({ flex }) => (flex ? "column" : "row")};
-  justify-content: space-around;
-  ${({ flex }) =>
-    flex
-      ? ` 
-    > * {
-      &:not(:first-child) {
-        margin-top: 1rem;
-      }
-    }
-    `
-      : `
-    > * {
-      &:not(:first-child) {
-        margin-left: 2rem;
-      }
-    }
-    `}
-`;
 const Menu = ({ handleClick, isBurger }) => {
   const menu = [
     { to: "/portfolio", title: "Portfolio" },
@@ -56,5 +35,27 @@ const Menu = ({ handleClick, isBurger }) => {
     </>
   );
 };
+
+const Icons = styled.div`
+  display: flex;
+  flex-direction: ${({ flex }) => (flex ? "column" : "row")};
+  justify-content: space-around;
+  ${({ flex }) =>
+    flex
+      ? ` 
+    > * {
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+    }
+    `
+      : `
+    > * {
+      &:not(:first-child) {
+        margin-left: 2rem;
+      }
+    }
+    `}
+`;
 
 export default Menu;

@@ -2,6 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Menu from "../Menu";
 
+const RegularMenu = ({ handleClick }) => {
+  return (
+    <Container>
+      <Menu handleClick={handleClick} isBurger={false} />
+    </Container>
+  );
+};
+
 const Container = styled.div`
   position: relative;
   display: flex;
@@ -18,12 +26,5 @@ const Container = styled.div`
     }
   }
 `;
-const RegularMenu = ({ handleClick }) => {
-  return (
-    <Container>
-      <Menu handleClick={handleClick} isBurger={false} />
-    </Container>
-  );
-};
 
 export default RegularMenu;

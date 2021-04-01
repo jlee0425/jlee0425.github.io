@@ -4,34 +4,6 @@ import PropTypes from "prop-types";
 import { createGlobalStyle } from "styled-components";
 import Header from "../components/Header";
 
-const Global = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    font-family: 'Roboto';
-    color: #29323c;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    a {
-      color: #303030;
-      transition: all 300ms linear;
-    }
-    a:hover {
-      transform: scale(1.1);
-    }   
-    > * {
-      box-sizing: border-box;
-    }
-    ::-web-kit-scrollbar {
-      display: none;
-    }
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-`;
 const Layout = ({ children, location }) => {
   return (
     <TransitionProvider
@@ -63,5 +35,34 @@ const Layout = ({ children, location }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+const Global = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto';
+    color: #29323c;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    a {
+      color: #303030;
+      transition: all 300ms linear;
+    }
+    a:hover {
+      transform: scale(1.1);
+    }   
+    > * {
+      box-sizing: border-box;
+    }
+    ::-web-kit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+`;
 
 export default Layout;

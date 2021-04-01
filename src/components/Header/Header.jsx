@@ -5,27 +5,6 @@ import { useViewWidth } from "../";
 import BurgerMenu from "./BurgerMenu";
 import RegularMenu from "./RegularMenu";
 
-const Navbar = styled.div`
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 75px;
-  width: 100%;
-  color: black;
-  background: #101010;
-  z-index: 2;
-`;
-const Logo = styled.img`
-  display: block;
-  max-height: 60px;
-  max-width: 60px;
-  height: 100%;
-  width: 100%;
-  margin: auto 1rem;
-`;
-
 const Header = () => {
   const viewWidth = useViewWidth();
   const [isBurger, setBurger] = useState(false);
@@ -79,5 +58,26 @@ const Header = () => {
     </Navbar>
   );
 };
+
+const Navbar = styled.div`
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  width: 100%;
+  color: black;
+  background: #101010;
+  z-index: 2;
+`;
+const Logo = styled.img`
+  display: block;
+  max-height: 60px;
+  max-width: 60px;
+  height: 100%;
+  width: 100%;
+  margin: auto 1rem;
+`;
 
 export default Header;
