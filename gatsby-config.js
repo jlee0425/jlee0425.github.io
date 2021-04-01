@@ -1,15 +1,15 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-})
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: `Jake Lee`,
     title_short: `jlee`,
     description: `Jake Lee's Portfolio`,
-    author: `@jlee0425`
+    author: `@jlee0425`,
   },
   plugins: [
-    'gatsby-plugin-layout',
+    "gatsby-plugin-layout",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
@@ -18,8 +18,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -29,8 +29,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`
-      }
+        icon: `src/images/icon.png`,
+      },
     },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
@@ -38,26 +38,26 @@ module.exports = {
         fonts: [
           {
             family: `Roboto`,
-            variants: [`300`, `400`, `700`]
-          }
-        ]
-      }
+            variants: [`300`, `400`, `700`],
+          },
+        ],
+      },
     },
     {
-      resolve: 'gatsby-source-prismic-graphql',
+      resolve: "gatsby-source-prismic-graphql",
       options: {
-        repositoryName: 'jlee0425',
+        repositoryName: "jlee0425",
+        defaultLang: "en-US",
         accessToken: `${process.env.API_KEY}`,
-        previews: true,
         pages: [
           {
-            type: 'Project',
-            match: '/portfolio/:uid',
-            component: require.resolve('./src/templates/Project.jsx')
-          }
+            type: "Project",
+            match: "/portfolio/:uid",
+            component: require.resolve("./src/templates/Project.jsx"),
+          },
         ],
-        sharpKeys: [/image|photo|picture/]
-      }
-    }
-  ]
-}
+        sharpKeys: [/image|photo|picture/],
+      },
+    },
+  ],
+};
