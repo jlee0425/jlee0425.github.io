@@ -24,7 +24,12 @@ const Global = createGlobalStyle`
     }   
     > * {
       box-sizing: border-box;
-    }     
+    }
+    ::-web-kit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 `;
 const Layout = ({ children, location }) => {
